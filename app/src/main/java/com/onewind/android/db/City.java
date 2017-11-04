@@ -6,7 +6,7 @@ import org.litepal.crud.DataSupport;
  * Created by bin on 2017/11/4.
  */
 
-public class CIty extends DataSupport {
+public class City extends DataSupport {
 
     private int id;
 
