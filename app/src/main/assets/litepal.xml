@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<litepal>
+    <dbname value="one_wind"/>
+    <version value="1"/>
+        <list>
+            <mapping class="com.onewind.android.db.Province"/>
+            <mapping class="com.onewind.android.db.City"/>
+            <mapping class="com.onewind.android.db.County"/>
+        </list>
+</litepal>
