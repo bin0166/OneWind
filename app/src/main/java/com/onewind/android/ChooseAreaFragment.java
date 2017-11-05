@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.onewind.android.db.City;
 import com.onewind.android.db.County;
@@ -175,7 +176,13 @@ public class ChooseAreaFragment extends Fragment {
         HttpUtil.sendOkHttpRequest(address, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-
+                getActivity().runOnUiThread(new Runnable() {
+                   @Override
+                    public void run() {
+                       closeProgressDialog();
+                       Toast.makeText(getContext(), "加载失败", Toast.LENGTH_SHORT).show();
+                   }
+                });
             }
 
             @Override
@@ -193,6 +200,7 @@ public class ChooseAreaFragment extends Fragment {
                    getActivity().runOnUiThread(new Runnable() {
                       @Override
                        public void run() {
+                          closeProgressDialog();
                           if("province".equals(type)) {
                               queryProvinces();
                           } else if("city".equals(type)) {

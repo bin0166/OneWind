@@ -22,7 +22,7 @@ public class Utility {
     public static boolean handleProvinceResponse(String response) {
         if(!TextUtils.isEmpty(response)) {
             try {
-                JSONArray allProvinces = new JSONArray();
+                JSONArray allProvinces = new JSONArray(response);
                 for(int i = 0; i < allProvinces.length(); i++) {
                     JSONObject provinceObject = allProvinces.getJSONObject(i);
                     Province province = new Province();
