@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height='wrap_content'
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="15dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="4dp">
+
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/lifestyle_type_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sport"/>
+
+
+        <TextView
+            android:id="@+id/lifestyle_brf_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/lifestyle_type_text"
+            android:layout_marginLeft="15dp"
+            android:text="较适宜"/>
+
+
+        <TextView
+            android:id="@+id/lifestyle_txt_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lifestyle_brf_text"
+            android:text="天气较好，无雨水困扰，较适宜进行各种运动，但因气温较低，在户外运动请注意增减衣物。"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
