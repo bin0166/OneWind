@@ -8,7 +8,9 @@
         android:layout_height="wrap_content"
         android:text="生活建议"/>
 
-    <LinearLayout android:orientation="horizontal"
+    <LinearLayout
+        android:id="@+id/lifestyle_layout"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
