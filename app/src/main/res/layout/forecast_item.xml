@@ -17,13 +17,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="日期"/>
 
             <TextView
                 android:id="@+id/date_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:textColor="#fff"
                 android:text="2013-12-30"/>
 
         </LinearLayout>
@@ -38,12 +39,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="最高温度  "/>
 
             <TextView
                 android:id="@+id/max_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="4"/>
 
         </LinearLayout>
@@ -57,12 +60,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="最低温度  "/>
 
             <TextView
                 android:id="@+id/min_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="-5"/>
 
         </LinearLayout>
@@ -84,12 +89,13 @@
                 android:id="@+id/cond_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="晴"/>
 
             <ImageView
                 android:id="@+id/cond_image_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
 
         </LinearLayout>
 
@@ -104,12 +110,14 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="风向  "/>
 
             <TextView
                 android:id="@+id/wind_dir_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="西北风"/>
 
         </LinearLayout>
@@ -124,12 +132,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="风力  "/>
 
             <TextView
                 android:id="@+id/wind_sc_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="1-2"/>
 
         </LinearLayout>
@@ -150,13 +160,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="风速  "/>
 
             <TextView
                 android:id="@+id/wind_spd_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:textColor="#fff"
                 android:text="14"/>
 
         </LinearLayout>
@@ -171,12 +182,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="紫外指数  "/>
 
             <TextView
                 android:id="@+id/uv_index_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="3"/>
 
         </LinearLayout>
@@ -190,12 +203,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="能见度  "/>
 
             <TextView
                 android:id="@+id/vis_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fff"
                 android:text="10"/>
 
         </LinearLayout>

@@ -1,6 +1,8 @@
 package com.onewind.android;
 
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -51,6 +53,8 @@ public class WeatherActivity extends AppCompatActivity {
 
     private LinearLayout lifeStyleLayout;
 
+    private ImageView bingPicImg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,7 @@ public class WeatherActivity extends AppCompatActivity {
         windSpdText = (TextView) findViewById(R.id.wind_spd_text);
         forecastLayout = (LinearLayout) findViewById(R.id.forecast_layout);
         lifeStyleLayout = (LinearLayout) findViewById(R.id.lifestyle_layout);
+        bingPicImg = (ImageView) findViewById(R.id.bing_pic_img);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = prefs.getString("weather", null);
         if(weatherString != null) {
@@ -76,6 +81,20 @@ public class WeatherActivity extends AppCompatActivity {
             String weatherId = getIntent().getStringExtra("weather_id");
             weatherLayout.setVisibility(View.INVISIBLE);
             requestWeather(weatherId);
+        }
+        String bingPic = prefs.getString("bing_pic", null);
+        if(bingPic != null) {
+            Glide.with(this).load(bingPic).into(bingPicImg);
+        } else {
+            loadBingPic();
+        }
+        if(Build.VERSION.SDK_INT >= 21) {
+            View decorView = getWindow().getDecorView();
+            decorView.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                            View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+            );
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
     }
 
@@ -120,6 +139,7 @@ public class WeatherActivity extends AppCompatActivity {
                 });
             }
         });
+        loadBingPic();
     }
 
     /**
@@ -214,5 +234,34 @@ public class WeatherActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    /**
+     * 加载必应每日一图
+     */
+    public void loadBingPic() {
+        String requestBingPic = "http://guolin.tech/api/bing_pic";
+        HttpUtil.sendOkHttpRequest(requestBingPic, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final String bingPic = response.body().string();
+                SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(
+                        WeatherActivity.this
+                ).edit();
+                editor.putString("bing_pic", bingPic);
+                editor.apply();
+                runOnUiThread(new Runnable() {
+                   @Override
+                    public void run() {
+                       Glide.with(WeatherActivity.this).load(bingPic).into(bingPicImg);
+                   }
+                });
+            }
+        });
     }
 }
