@@ -1,5 +1,6 @@
 package com.onewind.android;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -264,6 +265,8 @@ public class WeatherActivity extends AppCompatActivity {
                 lifeTxtText.setText(lifeStyle.txt);
                 lifeStyleLayout.addView(lifeView);
                 weatherLayout.setVisibility(View.VISIBLE);
+                Intent intent = new Intent(this, AutoUpdateService.class);
+                startService(intent);
             }
         }
 
